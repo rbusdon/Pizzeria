@@ -1,10 +1,13 @@
-﻿namespace ConsoleApp1
+﻿using DatabaseHandler;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var dbContext = Startup.CreateHostBuilder().Build().Services.GetService<PizzeriaDBContext>();
         }
     }
 }
